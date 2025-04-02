@@ -105,7 +105,7 @@ def _insert(node: dict, k: Any, v: Any, cmp_func: Callable) -> dict:
     try:
         # caso base, el arbol esta vacio
         if node is None:
-            node = trn.new_bst_node(k, v, 1)
+            node = trn.new_node(k, v, 1)
         # caso base, el arbol no esta vacio
         else:
             _cmp = cmp_func(k, node["key"])
