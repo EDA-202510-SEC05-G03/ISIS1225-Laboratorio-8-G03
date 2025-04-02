@@ -8,7 +8,6 @@ from DataStructures.Utils import config
 from DataStructures.Utils import error as error
 import csv
 assert config
-import Algorithms.default_sort_criteria as dsc
 from typing import Callable
 from typing import Any
 
@@ -194,8 +193,9 @@ def defaultfunction(id1, id2):
     elif id1 < id2:
         return -1
     return 0
+
 def default_sort_criteria(element_1, element_2):
-    is_sorted = dsc.default_sort_criteria(element_1,element_2)
+    is_sorted = defaultfunction(element_1,element_2)
     return is_sorted
 
 def merge_sort(lst: dict, sort_crit: Callable) -> dict:

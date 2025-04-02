@@ -1,5 +1,5 @@
 """
-  Estructura que contiene la información a guardar en una ``nodo`` de un árbol binario
+Estructura que contiene la información a guardar en un ``nodo`` de un árbol binario
 """
 
 
@@ -38,7 +38,7 @@ def get_value(my_node):
     """
     Obtiene el valor ``value`` de un nodo recibido.
 
-    :param my_node: El nodo con la iformación
+    :param my_node: El nodo con la información
     :type my_node: bst_node
 
     :returns: El valor almacenado en el nodo
