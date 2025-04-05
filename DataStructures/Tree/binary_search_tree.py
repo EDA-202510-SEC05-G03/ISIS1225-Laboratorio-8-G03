@@ -223,13 +223,12 @@ def get_min(tree: dict) -> dict:
 def _min(node: dict) -> dict:
     """Función recursiva para obtener el nodo con la llave mínima."""
     try:
-        __min__ = node
-        if node is not None:
-            if node["left"] is not None:
-                __min__ = node
-            else:
-                __min__ = _min(node["left"])
-        return __min__
+        if node is None:
+            return None
+        elif node["left"] is None:
+            return node
+        else:
+            return _min(node["left"])
     except Exception as exp:
         error.reraise("bst", "_min()", exp)
 
@@ -270,13 +269,12 @@ def get_max(tree: dict) -> dict:
 def _max(node: dict) -> dict:
     """Función recursiva para obtener el nodo con la llave máxima."""
     try:
-        __max__ = None
-        if node is not None:
-            if node["right"] is not None:
-                __max__ = node
-            else:
-                __max__ = _max(node["right"])
-        return __max__
+        if node is None:
+            return None
+        elif node["right"] is None:
+            return node
+        else:
+            return _max(node["right"])
     except Exception as exp:
         error.reraise("bst", "_max()", exp)
 
