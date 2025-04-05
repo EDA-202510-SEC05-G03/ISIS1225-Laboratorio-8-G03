@@ -99,7 +99,7 @@ def update_date_index(map, crime):
     if entry is None:
         bst.put(map, crimedate.date(), new_data_entry(crime))
         # TODO HECHO Realizar el caso en el que no se encuentra la fecha
-        entry = bst.get(map, crimedate.date())
+        datentry = bst.get(map, crimedate.date())
     else:
         datentry = entry
     add_date_index(datentry, crime)
@@ -118,10 +118,11 @@ def add_date_index(datentry, crime):
     offenseIndex = datentry['offenseIndex']
     offentry = lp.get(offenseIndex, crime['OFFENSE_CODE_GROUP'])
     if (offentry is None):
-        # TODO Realice el caso en el que no se encuentre el tipo de crimen
-        pass
+        new_entry = new_offense_entry(crime['OFFENSE_CODE_GROUP'], crime)
+        lp.put(offenseIndex, crime['OFFENSE_CODE_GROUP'], new_entry)
     else:
-        # TODO Realice el caso en el que se encuentre el tipo de crimen
+        lstoffenses = offentry['lstoffenses']
+        al.add_last(lstoffenses, crime)
         pass
     return datentry
 
