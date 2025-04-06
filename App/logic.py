@@ -166,32 +166,31 @@ def index_height(analyzer):
     """
     Altura del arbol
     """
-    # TODO Completar la función de consulta
-    pass
+    return bst.height(analyzer['dateIndex'])
+    
 
 
 def index_size(analyzer):
     """
     Numero de elementos en el indice
     """
-    # TODO Completar la función de consulta
-    pass
+    return bst.size(analyzer['dateIndex'])
+    
 
 
 def min_key(analyzer):
     """
     Llave mas pequena
     """
-    # TODO Completar la función de consulta
-    pass
+    return bst.get_min(analyzer['dateIndex'])
+    
 
 
 def max_key(analyzer):
     """
     Llave mas grande
     """
-    # TODO Completar la función de consulta
-    pass
+    return bst.get_max(analyzer['dateIndex'])
 
 
 def get_crimes_by_range(analyzer, initialDate, finalDate):
@@ -199,7 +198,7 @@ def get_crimes_by_range(analyzer, initialDate, finalDate):
     Retorna el numero de crimenes en un rago de fechas.
     """
     # TODO Completar la función de consulta
-    pass
+    
 
 
 def get_crimes_by_range_code(analyzer, initialDate, offensecode):
@@ -208,4 +207,4 @@ def get_crimes_by_range_code(analyzer, initialDate, offensecode):
     de un tipo especifico.
     """
     # TODO Completar la función de consulta
-    pass
+    
