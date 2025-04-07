@@ -52,7 +52,6 @@ def new_logic():
                 }
 
     analyzer['crimes'] = al.new_list()
-    # TODO HECHO completar la creación del mapa ordenado
     analyzer['dateIndex'] = bst.new_map()
     
     return analyzer
@@ -98,7 +97,6 @@ def update_date_index(map, crime):
     entry = bst.get(map, crimedate.date())
     if entry is None:
         bst.put(map, crimedate.date(), new_data_entry(crime))
-        # TODO HECHO Realizar el caso en el que no se encuentra la fecha
         datentry = bst.get(map, crimedate.date())
     else:
         datentry = entry
