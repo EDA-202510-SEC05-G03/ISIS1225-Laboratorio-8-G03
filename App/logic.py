@@ -197,6 +197,9 @@ def get_crimes_by_range(analyzer, initialDate, finalDate):
     """
     total = 0
     date_tree = analyzer['dateIndex']
+    initialDate = datetime.datetime.strptime(initialDate, '%Y-%m-%d').date()
+    finalDate = datetime.datetime.strptime(finalDate, '%Y-%m-%d').date()
+
     entries = bst.values(date_tree, initialDate, finalDate)
     for i in range(al.size(entries)):
         entry = al.get_element(entries, i)
@@ -210,6 +213,8 @@ def get_crimes_by_range_code(analyzer, initialDate, offensecode):
     Para una fecha determinada, retorna el numero de crimenes
     de un tipo especifico.
     """
+    initialDate = datetime.datetime.strptime(initialDate, '%Y-%m-%d').date()
+    
     date_tree = analyzer['dateIndex']
     entry = bst.get(date_tree, initialDate)
     
