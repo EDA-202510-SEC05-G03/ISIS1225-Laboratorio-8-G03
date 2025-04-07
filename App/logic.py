@@ -145,6 +145,7 @@ def new_offense_entry(offensegrp, crime):
     ofentry = {'offense': None, 'lstoffenses': None}
     ofentry['offense'] = offensegrp
     ofentry['lstoffenses'] = al.new_list()
+    al.add_last(ofentry['lstoffenses'], crime)
     return ofentry
 
 

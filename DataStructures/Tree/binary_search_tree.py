@@ -307,7 +307,7 @@ def height(tree: dict) -> int:
 def _height(node: dict) -> int:
     try:
         if node is None:
-            return 0
+            return -1
         else:
             left_h = _height(node["left"])
             right_h = _height(node["right"])
